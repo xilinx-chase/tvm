@@ -269,12 +269,7 @@ if __name__ == "__main__":
         else:
             print(f"{label} label doesn't exist")
 
-    new_body = add_ccs_to_body(body, "Tom and Jerry")
-    if new_body is None:
-        logging.info(f"Everyone to cc is already cc'ed, no update needed")
-        exit(0)
-
-    logging.info(f"Changing body from:\n----\n{body}\n----\nto:\n----\n{new_body}\n----")
+    new_body = add_ccs_to_body(body, ["ssuxue])
 
     # Set the PR/issue body on GitHub
     data = {"body": new_body}
