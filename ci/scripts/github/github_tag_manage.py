@@ -260,6 +260,7 @@ if __name__ == "__main__":
     title = item["title"]
     body = item["body"]
     
+    labels = item["labels"]
     existing_labels = ["bug", "duplicate", "good first issue", "help wanted", "question", "documentation",
                        "enhancement", "invalid", "wontfix"]
     labels = list(map(lambda lb: lb["name"], labels))
