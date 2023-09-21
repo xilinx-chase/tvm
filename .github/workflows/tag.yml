@@ -105,3 +105,4 @@ jobs:
           # cmake ..
           # cmake --build . --config Release --target runtime
           echo ${{github.event.action}}
+          python ci/scripts/github/github_tag_manage.py || echo failed
