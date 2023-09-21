@@ -269,8 +269,8 @@ if __name__ == "__main__":
             print(f"To execute the related operation of {label} label")
         else:
             print(f"{label} label doesn't exist")
-
-    new_body = add_ccs_to_body(body, ["ssuxue])
+s
+    new_body = add_ccs_to_body(body, ["ssuxue"])
 
     # Set the PR/issue body on GitHub
     data = {"body": new_body}
