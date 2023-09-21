@@ -27,7 +27,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: Teams-${{ github.event.pull_request.number }}-${{ github.event.issue.number }}
+  group: Tag-${{ github.event.pull_request.number }}-${{ github.event.issue.number }}
   cancel-in-progress: true
 
 jobs:
