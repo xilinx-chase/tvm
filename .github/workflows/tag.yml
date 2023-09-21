@@ -94,6 +94,10 @@ jobs:
       # - name: Set up environment
       #   uses: ./.github/actions/setup
       - name: Build static TVM runtime
+        env:
+          PR: ${{ toJson(github.event.pull_request) }}
+          ISSUE: ${{ toJson(github.event.issue) }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash -l {0}
         run: |
           # tests/scripts/task_config_build_static.sh build
