@@ -22,9 +22,8 @@
 name: Tag-CI
 
 on:
-  label:
-    types: [created, deleted, edited]
-  workflow_dispatch:
+  issues:
+    types: labeled
 
 concurrency:
   group: Tag-${{ github.event.pull_request.number }}-${{ github.event.issue.number }}
