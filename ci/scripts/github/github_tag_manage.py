@@ -259,8 +259,15 @@ if __name__ == "__main__":
     item = issue if issue is not None else pr
     title = item["title"]
     body = item["body"]
-    labels = item["labels"]
-    print(list(map(lambda lb: f"To execute operating about label {lb}", labels)))
+    
+    existing_labels = ["bug", "duplicate", "good first issue", "help wanted", "question", "documentation",
+                       "enhancement", "invalid", "wontfix"]
+    labels = list(map(lambda lb: lb["name"], labels))
+    for label in labels:
+        if label in existing_labels:
+            print(f"To execute the related operation of {label} label")
+        else:
+            print(f"{label} label doesn't exist")
 
     new_body = add_ccs_to_body(body, "Tom and Jerry")
     if new_body is None:
