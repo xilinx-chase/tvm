@@ -39,6 +39,11 @@ jobs:
           submodules: 'recursive'
       # - name: Set up environment
       #   uses: ./.github/actions/setup
+      - name: Run git submodules
+        run: |
+          git submodule sync --recursive
+          git submodule update --init --recursive
+          pwd
       - name: Conda Build
         shell: bash -l {0}
         run: >-
@@ -55,6 +60,11 @@ jobs:
           submodules: 'recursive'
       # - name: Set up environment
       #   uses: ./.github/actions/setup
+      - name: Run git submodules
+        run: |
+          git submodule sync --recursive
+          git submodule update --init --recursive
+          pwd
       - name: Build static TVM runtime
         env:
           PR: ${{ toJson(github.event.pull_request) }}
